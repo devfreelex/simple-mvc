@@ -1,0 +1,71 @@
+.container {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+}
+.gutter {padding:15px;}
+.gutter-no-top {padding:0 15px 15px 15px}
+.gutter-no-bottom {padding:15px 15px 0 15px};
+.gutter-no-left {padding:15px 15px 15px 0}
+.gutter-no-right {padding:15px 0 15px 15px}
+.gutter-top {padding:15px 0 0 0}
+.gutter-bottom {padding:0 0 15px 0}
+.gutter-left {padding:0 0 0 15px}
+.gutter-right {padding:0 15px 0 0}
+.gutter-top-bottom {padding:15px 0 15px 0 }
+.gutter-left {padding:0 15px 0 0}
+
+
+.grid {
+    display: grid;
+    grid-gap: 15px;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    grid-template-rows: 1fr;
+    position: relative;
+}
+
+
+.grid-size-1 {grid-template-columns: 1fr;}
+.grid-size-2 {grid-template-columns: repeat(2, 1fr);}
+.grid-size-3 {grid-template-columns: repeat(3, 1fr);}
+.grid-size-4 {grid-template-columns: repeat(4, 1fr);}
+.grid-size-5 {grid-template-columns: repeat(5, 1fr);}
+.grid-size-6 {grid-template-columns: repeat(6, 1fr);}
+
+.grid > * {
+    /* background:#f9f9f9; */
+    padding:15px;
+    position: relative;
+}
+
+.grid.no-gutter > * { padding: 0}
+.grid.no-gutter-top > * { padding: 0 15px 15px 15px}
+.grid.no-gutter-top-botom > * { padding: 0 15px 0 15px}
+.grid.no-gutter-left-right > * { padding: 15px 0 15px 0}
+.grid.no-gutter-bottom > * { padding: 15px 15px 0 15px}
+.grid.no-gutter-left > * { padding: 15px 15px 15px 0}
+.grid.no-gutter-right > * { padding: 15px 0 15px 15px}
+
+
+@media all and (max-width:1080px) {
+    .grid-size-4 {grid-template-columns: repeat(2, 1fr);}
+    .grid-size-5 {grid-template-columns: repeat(3, 1fr);}
+    .grid-size-6 {grid-template-columns: repeat(3, 1fr);}
+}
+
+@media all and (max-width:720px) {
+    .grid-size-2,
+    .grid-size-3,
+    .grid-size-4 {grid-template-columns: repeat(2, 1fr);}
+    .grid-size-5,
+    .grid-size-6 {grid-template-columns: repeat(3, 1fr);;}
+}
+
+@media all and (max-width:580px) {
+    .grid-size-2,
+    .grid-size-3,
+    .grid-size-4,
+    .grid-size-5,
+    .grid-size-6 {grid-template-columns: 1fr;}
+}
