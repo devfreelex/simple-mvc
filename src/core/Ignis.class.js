@@ -1,6 +1,7 @@
 export default class Ignis {
     constructor () {
         this.modules = {};
+        this.routeElem = '';
     }
     
     init() {
@@ -37,11 +38,16 @@ export default class Ignis {
 
     initComponents (components) {
 
-        // document.querySelector('#app').innerHTML = ''
-
-       components.forEach(component => {           
-           component.init()
+       if (this.routeElem) {
+           const routerElement = document.querySelector(this.routeElem)
+        //    routerElement.innerHTML = ''
+        console.log(routerElement)
+       }
+    
+       components.forEach(component => {       
+           component.render(this.routeElem)
        })
+
     }
     
     hashChange() {
@@ -51,5 +57,9 @@ export default class Ignis {
     
     configModules (settings) {
         this.modules = settings;
+    }
+
+    configRouter (config) {
+        this.routeElem = config.element
     }
 }
