@@ -10,5 +10,4 @@ const SidebarComponent = new Component({
 })
 
 
-console.log(SidebarComponent)
 export default SidebarComponent

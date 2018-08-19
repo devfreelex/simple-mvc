@@ -39,9 +39,8 @@ export default class Ignis {
     initComponents (components) {
 
        if (this.routeElem) {
-           const routerElement = document.querySelector(this.routeElem)
-        //    routerElement.innerHTML = ''
-        console.log(routerElement)
+            const routerElement = document.querySelector(this.routeElem)
+            routerElement.innerHTML = ''
        }
     
        components.forEach(component => {       

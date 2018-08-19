@@ -3,6 +3,8 @@ import Component from '../../../core/Ignis.component.class.js';
 import orderTemplate from './summary.order.template.js';
 import orderModel from './summary.order.model.js';
 
+import Emitter from '../../../core/emmit.js';
+
 
 
 const SummaryOrderComponent =  new Component({
@@ -10,9 +12,17 @@ const SummaryOrderComponent =  new Component({
     template: orderTemplate,
     model: orderModel,
     routed: true,
-    controller: () => {
-        $('order-component').addEventListener('click', event => {
-            console.log(event.target)
+    controller: (context) => {
+        
+        const orderComponent = $(context.name);
+        
+        const options = {
+            data: {teste: 'Um teste de eventos'}            
+        }
+        const addSupport = new Emitter('addSupport', orderComponent, options);
+
+        orderComponent.addEventListener('click', event => {
+            addSupport.emit()
         })
     }
 })
