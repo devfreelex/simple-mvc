@@ -5,7 +5,7 @@ export default class Ignis {
     }
     
     init() {
-        this.hashChange()
+        this.change()
     }
 
 
@@ -49,7 +49,7 @@ export default class Ignis {
 
     }
     
-    hashChange() {
+    change() {
         window.addEventListener('hashchange', () => this.router(), false);
         window.addEventListener('DOMContentLoaded', () => this.router(), false);
     }

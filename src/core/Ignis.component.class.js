@@ -2,7 +2,7 @@ export default class Component {
     constructor (config) { 
         this.name = config.name;
         this.template = config.template;
-        this.model = this.proxify(config.model);
+        this.model = this.proxify(config.model, this, this.rerender);
         this.params = config.params;
         this.controller = config.controller;
         this.routed = config.routed || false;
@@ -31,17 +31,17 @@ export default class Component {
 
     }
 
-    rerender () {
-        const component = document.querySelector(this.name);
-        const template = document.createElement(this.name);
-        template.innerHTML = this.template(this.model);
+    rerender (context) {
+        const component = document.querySelector(context.name);
+        const template = document.createElement(context.name);
+        template.innerHTML = context.template(context.model);
 
         component.innerHTML = template.outerHTML
 
     }
 
-    proxify (model) {
-
+    proxify (model, context, callback) {
+        
         const self = this;
 
         const handler = {
@@ -56,7 +56,7 @@ export default class Component {
 
                 target[prop] = val;
                 
-                self.rerender()
+                callback(context)
                 return true
             }
         }
