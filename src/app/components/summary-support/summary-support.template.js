@@ -3,7 +3,7 @@ const supportTemplate = (model) => /*html*/`
 
 <div class="container gutter-no-top">
     <div class="box-title">
-        <i class="fa fa-cube"></i> Resumo do suporte
+        <i class="fa fa-cube"></i> ${model.title}
     </div>
     <div class="grid grid-size-3">
         ${model.tickets.map(ticket => {

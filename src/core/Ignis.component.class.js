@@ -53,7 +53,9 @@ export default class Component {
             },
 
             set (target, prop, val) {
+
                 target[prop] = val;
+                
                 self.rerender()
                 return true
             }

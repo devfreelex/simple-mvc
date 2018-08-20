@@ -11,7 +11,7 @@ const SummarySupportCompnent = new Component({
     controller:(context) => {
         
         const component = $('body');
-        const { tickets } = context.model;
+        let { tickets, title } = context.model;
 
 
         component.addEventListener('addSupport', event => {            
@@ -22,7 +22,8 @@ const SummarySupportCompnent = new Component({
                 ticket.description += 1;
             })
 
-            console.log(context.model.title = 'xxx')
+            context.model.title = 'Um novo título'
+            context.model.tickets = tickets
         })
 
 
