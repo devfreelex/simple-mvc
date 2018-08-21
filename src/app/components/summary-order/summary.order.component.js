@@ -1,4 +1,4 @@
-import $ from '../../utils/DOM.js';
+import  $  from '../../utils/DOM.js';
 import Component from '../../../core/Ignis.component.class.js';
 import orderTemplate from './summary.order.template.js';
 import orderModel from './summary.order.model.js';

@@ -59,6 +59,6 @@ export default class Ignis {
     }
 
     configRouter (config) {
-        this.routeElem = config.element
+        this.routeElem = config.element;
     }
 }

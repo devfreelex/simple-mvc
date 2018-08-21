@@ -36,7 +36,7 @@ export default class Component {
         const template = document.createElement(context.name);
         template.innerHTML = context.template(context.model);
 
-        component.innerHTML = template.outerHTML
+        component.innerHTML = template.outerHTML;
 
     }
 
@@ -49,19 +49,19 @@ export default class Component {
                 if(name in target) {
                     return target[name]
                 } 
-                console.error(`key doesnot exist: <<${name}>>`)
+                console.error(`key doesnot exist: <<${name}>>`);
             },
 
             set (target, prop, val) {
 
                 target[prop] = val;
                 
-                callback(context)
+                callback(context);
                 return true
             }
         }
 
-        const proxy = new Proxy(model, handler)
+        const proxy = new Proxy(model, handler);
         return proxy;
     }
 
